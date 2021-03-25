@@ -1,11 +1,11 @@
 class Movie < ApplicationRecord
   enum status: {
-    not_rented: 0,
+    available: 0,
     rented: 1
   }
 
-  belongs_to :user_id
-  belongs_to :category_id
+  belongs_to :user, optional: true
+  belongs_to :category
 
   validates :name, presence: true
   validates :director, presence: true
