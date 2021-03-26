@@ -11,6 +11,22 @@
   </head>
 
   <body>
+  <header>
+  <div class='section_title'>
+    <%= link_to movies_path do %>
+      <h1 class="title">Movie Rent Store</h1>
+    <% end %>
+  </div>
+  <%# <div class='search-bar'> %>
+      <%= form_with class: 'button search-bar', url: search_path, method: 'get', local: true do |form|  %>
+      <%= form.text_field :query %>
+      <% end %>
+  <%# </div> %>
+  <span class='button button-movie'>New Movie</span>
+  </div>
+
+  <%# <%= link_to 'New Category', new_category_path %>
+  </header>
     <%= yield %>
   </body>
 </html>

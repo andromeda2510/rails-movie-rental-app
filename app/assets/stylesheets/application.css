@@ -13,3 +13,254 @@
  *= require_tree .
  *= require_self
  */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Custom Properties */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --roboto-font: "Roboto", sans-serif;
+  --lato-font: "Lato", sans-serif;
+
+  --fw-reg: 400;
+  --fw-bold: 700;
+
+  --clr-light: #ffffff;
+  --clr-dark: #111111;
+  --clr-gray: #696d7d;
+  --clr-accent: #ff8b2c;
+
+  --fs-h1: 42px;
+  --fs-h2: 30px;
+  --fs-h3: 20px;
+  --fs-body: 16px;
+  --fs-footer: 14px;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+/* General styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  font-family: var(--lato-font);
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+footer {
+  text-align: center;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  padding: 0px 50px;
+}
+
+/* Typography */
+
+h1,
+h2,
+h3 {
+  line-height: 1;
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.subtitle {
+  font-family: var(--roboto-font);
+  font-size: 18px;
+}
+
+/* buttons */
+
+.button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 2px solid var(--clr-dark);
+  color: var(--clr-dark);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: var(--roboto-font);
+  margin-right: 8px;
+}
+
+.form-button {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.button-movie {
+  color: var(--clr-light) !important;
+  right: 80px;
+  top: calc(50% - 40px / 2 - 372px);
+  border: none;
+  background-color: var(--clr-accent);
+}
+
+/* section title */
+
+.section_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* searchbar */
+
+.search-bar {
+  border: 2px solid var(--clr-gray);
+  color: var(--clr-gray);
+  margin-right: 0;
+}
+
+/* cards card */
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: center;
+  gap: 30px;
+  margin: 36px auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: 13rem;
+  width: 30rem;
+  box-shadow: var(--bs);
+}
+
+.card-content {
+  width: 100%;
+  padding: 12px;
+}
+
+.card-content__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.card-content__header-title {
+  gap: 10px;
+}
+
+.card-content__title {
+  color: var(--clr-dark);
+}
+
+.card-content__release-date {
+  color: var(--clr-gray);
+  font-size: var(--fs-body);
+}
+
+.card-content__status {
+  font-size: 30px;
+  background-color: var(--clr-accent);
+  color: var(--clr-light);
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.card-conent__tags {
+  display: flex;
+  align-items: center;
+}
+
+.card-content__tag {
+  background-color: var(--clr-gray);
+  color: var(--clr-light);
+  font-size: 12px;
+  border-radius: 17px;
+  padding: 0px 6px;
+  margin-right: 5px;
+}
+
+.card-conent__tag--title {
+  color: var(--clr-dark);
+  margin-right: 5px;
+  font-size: var(--fs-body);
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 10px;
+}
+
+/* forms */
+
+.form-text {
+  font-family: var(--roboto-font);
+  font-size: 14px;
+}
+
+.form-body {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  height: 40em;
+}
+
+.form-p {
+  margin: 7px;
+}
+
+.form-field {
+  width: 200px;
+  background: var(--clr-light);
+  border: 1px solid var(--clr-gray);
+  border-radius: 8px;
+  font-family: var(--roboto-font);
+  padding: 8px 16px;
+}

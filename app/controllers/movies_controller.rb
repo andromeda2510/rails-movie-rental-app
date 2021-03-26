@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
-  def index; end
+  def index
+    @movies = Movie.all
+  end
 
   def new; end
 
@@ -10,6 +12,11 @@ class MoviesController < ApplicationController
   def update; end
 
   def destroy; end
+
+  def search
+    @query = params[:query]
+    @movies = Movie.where('LOWER(title) LIKE LOWER(?)', "%#{@query}%")
+  end
 
   private
 

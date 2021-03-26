@@ -1,1 +1,26 @@
-<div>Hola Mundo</div>
+<%# <%= stylesheet_link_tag "assets/stylesheets/application.css" %> 
+
+<div class="movies-section">
+  <div class="cards-container">
+    <% @movies.each do |movie| %>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-content__header">
+            <div class="card-content__header-title">
+              <h2 class="card-content__title"><%= movie.name %></h2>
+              <p class="card-content__release-date"><%= movie.release_date %></p>
+            </div>
+            <div class="card-content__status"> <%= movie.status %> </div>
+          </div>
+          <div class="card-content__tags">
+            <span class="card-conent__tag--title">Category: </span>
+            <span class="card-content__tag"><%= movie.category.name %></span>
+            <span class="card-conent__tag--title">Director: <%= movie.director %> </span>
+          
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
