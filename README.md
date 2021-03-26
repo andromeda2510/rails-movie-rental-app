@@ -1,24 +1,24 @@
-# README
+# MOVIE RENTAL APP :film_projector:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An aplication for a Movie Rental Store to manage their rentals
 
-Things you may want to cover:
+:checkered_flag: Technologies used: 
 
-* Ruby version
+* Ruby version: 2.7
+* Rails version: 6.1
+* database: PostgreSQL
 
-* System dependencies
+:checkered_flag: Gems used:
+* Faker
+* HTTParty
+* Kaminari
 
-* Configuration
+:checkered_flag: Gems used: Database initialization:
+* bundle install
+* rails db:create
+* rails db:migrate
+* rails db:seed
 
-* Database creation
+:checkered_flag: Deployment:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://rails-movie-rental-app.herokuapp.com/movies
