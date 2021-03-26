@@ -9,6 +9,8 @@ gem 'rails', '~> 6.1.3'
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
+
+gem 'httparty', '~> 0.13.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
@@ -22,9 +24,6 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
-
-# Bulma CSS
-gem 'bulma-rails', '~> 0.9.1'
 
 # Simple form
 gem 'simple_form', '~> 5.1'

@@ -1,6 +1,9 @@
+# require 'Salesforce'
+
 class MoviesController < ApplicationController
+
   def index
-    @movies = Movie.all
+    @movies = Movie.order(:name).all
   end
 
   def new; end
@@ -13,6 +16,23 @@ class MoviesController < ApplicationController
 
   def destroy; end
 
+  def toggle_available_status
+    @movie = Movie.find(params[:id])
+    if @movie.status == 1
+      @movie.status = 0
+    else
+      @user = User.new(user_params)
+      if @user.save
+        @movie.status = 1
+        @movie.user_id = @user.id
+      end
+    end
+    @movie.save
+    # Salesforce.update_status(@movie, @user)
+
+    redirect_to movies_path
+  end
+
   def search
     @query = params[:query]
     @movies = Movie.where('LOWER(title) LIKE LOWER(?)', "%#{@query}%")
@@ -22,5 +42,9 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(:name, :director, :release_date, :status)
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email)
   end
 end
