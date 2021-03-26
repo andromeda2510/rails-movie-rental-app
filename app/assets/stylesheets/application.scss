@@ -41,11 +41,11 @@
   --clr-gray: #696d7d;
   --clr-accent: #ff8b2c;
 
-  --fs-h1: 42px;
-  --fs-h2: 30px;
-  --fs-h3: 20px;
-  --fs-body: 16px;
-  --fs-footer: 14px;
+  --fs-h1: 37px;
+  --fs-h2: 23px;
+  --fs-h3: 18px;
+  --fs-body: 15px;
+  --fs-footer: 12px;
 
   --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
     0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
@@ -198,7 +198,7 @@ h3 {
   flex-direction: row;
   gap: 10px;
   height: 13rem;
-  width: 30rem;
+  width: 35rem;
   box-shadow: var(--bs);
 }
 
