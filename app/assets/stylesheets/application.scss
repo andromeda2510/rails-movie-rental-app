@@ -68,8 +68,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px 0;
 }
 
 footer {
@@ -129,11 +128,15 @@ h3 {
 .form-button {
   display: flex;
   justify-content: space-between;
-  width: 200px;
+  align-items: baseline;
+}
+
+.btn-form {
+  margin-top: 10px;
 }
 
 .button-movie {
-  color: var(--clr-light) !important;
+  color: var(--clr-light);
   right: 80px;
   top: calc(50% - 40px / 2 - 372px);
 
@@ -167,9 +170,16 @@ h3 {
 /* searchbar */
 
 .search-bar {
-  border: 2px solid var(--clr-gray);
+  border: 1px solid var(--clr-gray);
   color: var(--clr-gray);
-  margin-right: 0;
+  border-radius: 15px;
+}
+
+.search-bar input {
+  border-style: hidden;
+}
+.no-outline:focus {
+  outline: none;
 }
 
 /* cards card */
@@ -251,6 +261,11 @@ h3 {
 
 /* forms */
 
+.title__form {
+  margin-top: 5rem;
+  text-align: center;
+}
+
 .form-text {
   font-family: var(--roboto-font);
   font-size: 14px;
@@ -260,15 +275,15 @@ h3 {
   display: flex;
   justify-content: center;
   margin-top: 25px;
-  height: 40em;
+  height: 20rem;
 }
 
 .form-p {
-  margin: 7px;
+  margin-bottom: 20px;
 }
 
 .form-field {
-  width: 200px;
+  width: 15rem;
   background: var(--clr-light);
   border: 1px solid var(--clr-gray);
   border-radius: 8px;

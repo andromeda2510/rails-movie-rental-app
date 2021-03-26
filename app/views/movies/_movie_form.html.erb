@@ -1,25 +1,26 @@
 <div class='form-body'>
-  <%= form_for :movie, url: movies_path, method: :post, local: true do |form| %>
+  <%= form_for @movie, local: true do |form| %>
 
     <div>
       <p class='form-p'>
-        <%= form.label :name, class: '' %></br>
-        <%= form.text_field :name, class: '' %>
+        <%= form.label :name, class: 'form-text'%>
+        <%= form.text_field :name, class: 'form-field' %>
       </p>
       <p class='form-p'>
-        <%= form.label :director, class: 'form-text' %></br>
-        <%= form.text_area :director, class: 'form-field' %>
+        <%= form.label :director, class: 'form-text' %>
+        <%= form.text_field :director, class: 'form-field' %>
       </p>     
       <p class='form-p'>
-        <%= form.label :release_date, class: 'form-text' %></br>
+        <%= form.label :release_date, class: 'form-text' %>
         <%= form.date_field :release_date, class: 'form-field', placeholder: "yyyy/mm/dd/" %>
       </p>
       <p class='form-p'>
-        <%= form.label :category, class: 'form-text' %></br>
+        <%= form.label :category, class: 'form-text' %>
         <span class="form-field"><%= form.collection_select :category_id, Category.all, :id, :name, include_blank: "Please Select" %></span>
       </p>
       <div class = "form-button form-p">
-        <%= form.submit class: "button button-category"%>
+        <%= form.submit class: "button btn-form"%>
+        <%= link_to "Cancel", :back, class: 'button button-movie' %>
       </div>
     </div>
   <% end %>

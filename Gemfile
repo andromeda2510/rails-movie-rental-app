@@ -25,9 +25,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
-# Simple form
-gem 'simple_form', '~> 5.1'
-
+# gem for pagination
+gem 'kaminari'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

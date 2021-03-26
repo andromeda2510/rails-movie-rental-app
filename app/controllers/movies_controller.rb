@@ -3,7 +3,7 @@ require 'salesforce'
 class MoviesController < ApplicationController
 
   def index
-    @movies = Movie.order(:name).all
+    @movies = Movie.order(:name).page(params[:page])
   end
 
   def new

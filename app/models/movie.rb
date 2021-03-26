@@ -12,4 +12,5 @@ class Movie < ApplicationRecord
   validates :name, presence: true
   validates :director, presence: true
 
+  paginates_per 4
 end

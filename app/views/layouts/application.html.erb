@@ -19,7 +19,7 @@
   </div>
   <%# <div class='search-bar'> %>
       <%= form_with class: 'button search-bar', url: search_path, method: 'get', local: true do |form|  %>
-      <%= form.text_field :query %>
+      <%= form.text_field :query, placeholder: "search", class: "no-outline" %>
       <% end %>
   <%# </div> %>
   <%= link_to new_movie_path do %>
