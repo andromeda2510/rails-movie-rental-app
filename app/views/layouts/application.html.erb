@@ -22,10 +22,12 @@
       <%= form.text_field :query %>
       <% end %>
   <%# </div> %>
-  <span class='button button-movie'>New Movie</span>
+  <%= link_to new_movie_path do %>
+    <span class='button button-movie'>New Movie</span>
+  <% end %>
   </div>
 
-  <%# <%= link_to 'New Category', new_category_path %>
+
   </header>
     <%= yield %>
   </body>

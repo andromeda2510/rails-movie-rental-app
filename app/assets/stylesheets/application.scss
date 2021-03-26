@@ -200,7 +200,6 @@ h3 {
 .card-content__header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
 }
 
 .card-content__header-title {
@@ -220,6 +219,7 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 0.5rem;
 }
 
 .card-content__tag {
@@ -239,9 +239,14 @@ h3 {
 
 .card-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: baseline;
-  margin-top: 10px;
+  gap: 10px;
+  padding: 0;
+}
+
+.card-footer p {
+  margin: 0.5rem 0.5rem;
 }
 
 /* forms */

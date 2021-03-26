@@ -1,0 +1,26 @@
+<div class='form-body'>
+  <%= form_for :movie, url: movies_path, method: :post, local: true do |form| %>
+
+    <div>
+      <p class='form-p'>
+        <%= form.label :name, class: '' %></br>
+        <%= form.text_field :name, class: '' %>
+      </p>
+      <p class='form-p'>
+        <%= form.label :director, class: 'form-text' %></br>
+        <%= form.text_area :director, class: 'form-field' %>
+      </p>     
+      <p class='form-p'>
+        <%= form.label :release_date, class: 'form-text' %></br>
+        <%= form.date_field :release_date, class: 'form-field', placeholder: "yyyy/mm/dd/" %>
+      </p>
+      <p class='form-p'>
+        <%= form.label :category, class: 'form-text' %></br>
+        <span class="form-field"><%= form.collection_select :category_id, Category.all, :id, :name, include_blank: "Please Select" %></span>
+      </p>
+      <div class = "form-button form-p">
+        <%= form.submit class: "button button-category"%>
+      </div>
+    </div>
+  <% end %>
+</div>
