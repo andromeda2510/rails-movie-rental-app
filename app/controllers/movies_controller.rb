@@ -1,4 +1,4 @@
-# require 'Salesforce'
+require 'salesforce'
 
 class MoviesController < ApplicationController
 
@@ -28,14 +28,14 @@ class MoviesController < ApplicationController
       end
     end
     @movie.save
-    # Salesforce.update_status(@movie, @user)
+    # salesforce.update_status(@movie, @user)
 
     redirect_to movies_path
   end
 
   def search
     @query = params[:query]
-    @movies = Movie.where('LOWER(title) LIKE LOWER(?)', "%#{@query}%")
+    @movies = Movie.where('LOWER(name) LIKE LOWER(?)', "%#{@query}%")
   end
 
   private
