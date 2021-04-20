@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   end
   resources :users
   get 'search', to: 'movies#search'
-  
+
   root 'movies#index'
 end
