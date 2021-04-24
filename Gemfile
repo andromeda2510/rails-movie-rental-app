@@ -9,7 +9,7 @@ gem 'rails', '~> 6.1.3'
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
-
+gem 'json', '=1.8.6'
 gem 'httparty', '~> 0.13.7'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
@@ -30,10 +30,10 @@ gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'kaminari'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
+gem 'rails-controller-testing'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
-
+gem 'pry', '~> 0.13.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -58,7 +58,7 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 3.26'
+  gem 'capybara'
   gem 'simplecov', require: false
   gem 'simplecov-rcov'
   gem 'selenium-webdriver'
