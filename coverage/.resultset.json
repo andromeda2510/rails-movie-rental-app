@@ -46,9 +46,9 @@
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
           0,
           null,
@@ -81,19 +81,8 @@
           1,
           null,
           1,
-          1,
+          2,
           null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          0,
           null,
           null
         ]
@@ -120,6 +109,18 @@
       "/home/tekton/Training/rails-movie-rental-app/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
@@ -187,29 +188,6 @@
         "branches": {
         }
       },
-      "/home/tekton/Training/rails-movie-rental-app/app/controllers/users_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/home/tekton/Training/rails-movie-rental-app/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -236,6 +214,6 @@
         }
       }
     },
-    "timestamp": 1619220067
+    "timestamp": 1619362906
   }
 }

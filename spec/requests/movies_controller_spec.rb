@@ -26,6 +26,12 @@ RSpec.describe MoviesController, type: :controller do
     end
   end
 
-  
+  describe "PATCH #update" do
+    it "updates the selected movie and redirects" do
+      movie = Movie.create! valid_params
+      patch :update, params: { id: movie.id, movie: { name: "another movie name", director: "New Director" } }
+      expect(response).to be_redirect
+    end
+  end
   
 end
