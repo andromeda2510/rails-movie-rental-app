@@ -37,9 +37,16 @@ RSpec.describe MoviesController, type: :controller do
   describe "DELETE #destroy" do
     it "deletes the selected movie" do
       movie = Movie.create! valid_params
-      
 
       expect{ delete :destroy, params: { id: movie.id } }.to change(Movie, :count).by(-1)
+    end
+  end
+
+  describe "POST #toggle_available_status" do
+    it "changes the movie status and redirects" do
+      movie = Movie.create! valid_params
+      post :update, params: { id: movie.id, movie: { status: 1, user: { name: "Someone", email: "someone@mail.com" } } }
+      expect(response).to be_redirect
     end
   end
   
