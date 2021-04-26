@@ -89,10 +89,10 @@ RSpec.describe MoviesController, type: :controller do
 
   describe "with invalid params" do
 
-    # it "renders new template" do
-    #   post :create, params: { movie: {name: 1, director: 2, release_date: "01/20/2015", status: 1, category_id: @category.id} }
-    #   expect(response).to render_template('new')
-    # end
+    it "renders new template" do
+      post :create, params: { movie: {name: "Test", director: "Guillermo del Toro", release_date: "01/20/2015", status: 2, category_id: @category.id} }
+      expect(response).to render_template('new')
+    end
     
 
     it "renders the 'edit' template" do
