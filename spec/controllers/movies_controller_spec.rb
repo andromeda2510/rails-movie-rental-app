@@ -11,7 +11,7 @@ RSpec.describe MoviesController, type: :controller do
   end
 
   let(:valid_params) {
-    { name: "Test title", director: "Test", release_date: "01/20/2015", category_id: @category.id }
+    { name: "Test title", director: "Test", release_date: "01/20/2015", category_id: @category.id, status: 1 }
   }
 
   describe "GET #index" do
@@ -68,15 +68,16 @@ RSpec.describe MoviesController, type: :controller do
   end
 
   describe "POST #toggle_available_status" do
-    it "changes the movie status from rented to available" do
+    it "changes the movie status from available to rented" do
       post :toggle_available_status, params: { id: @movie.id, movie: { status: 1 }, user: { name: "Someone", email: "someone@mail.com" } }
       expect(response).to be_redirect
     end
 
-   # it "changes the movie status from rented to available" do
-      #post :toggle_available_status, params: { id: @movie.id, movie: { status: 0 } }
-     # expect(response).to be_successful
-    #end
+    it "changes the movie status from rented to available" do
+      movie = Movie.create! valid_params
+      post :toggle_available_status, params: { id: movie.id, movie: { status: 0 } }
+      expect(response).to be_redirect
+    end
   end
   
   describe "GET #search" do
