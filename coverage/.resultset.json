@@ -10,6 +10,17 @@
       "/home/tekton/Training/rails-movie-rental-app/app/helpers/movies_helper.rb": {
         "lines": [
           1,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
           null
         ]
       },
@@ -109,18 +120,6 @@
       "/home/tekton/Training/rails-movie-rental-app/app/controllers/application_controller.rb": {
         "lines": [
           1,
-          null,
-          1,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
           null
         ]
       },
@@ -214,6 +213,6 @@
         }
       }
     },
-    "timestamp": 1619452830
+    "timestamp": 1619455204
   }
 }

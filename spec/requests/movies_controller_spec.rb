@@ -6,13 +6,15 @@ RSpec.describe MoviesController, type: :controller do
     @category = Category.create!({ name: "romance", description: "a description for new category" })
   end
 
+  before(:all) do
+    @movie = Movie.create!({ name: "Test title", director: "Test", release_date: "01/20/2015", status: 1, category_id: @category.id })
+  end
   let(:valid_params) {
     { name: "Test title", director: "Test", release_date: "01/20/2015", status: 1, category_id: @category.id }
   }
 
   describe "GET #index" do
     it "renders movie index" do
-      movie = Movie.create! valid_params
       get :index, params: {}
 
       expect(response).to be_successful
@@ -28,34 +30,30 @@ RSpec.describe MoviesController, type: :controller do
 
   describe "PATCH #update" do
     it "updates the selected movie and redirects" do
-      movie = Movie.create! valid_params
-      patch :update, params: { id: movie.id, movie: { name: "another movie name", director: "New Director" } }
+      patch :update, params: { id: @movie.id, movie: { name: "another movie name", director: "New Director" } }
       expect(response).to be_redirect
     end
   end
 
   describe "DELETE #destroy" do
     it "deletes the selected movie" do
-      movie = Movie.create! valid_params
 
-      expect{ delete :destroy, params: { id: movie.id } }.to change(Movie, :count).by(-1)
+      expect{ delete :destroy, params: { id: @movie.id } }.to change(Movie, :count).by(-1)
     end
   end
 
   describe "POST #toggle_available_status" do
     it "changes the movie status and redirects" do
-      movie = Movie.create! valid_params
-      post :update, params: { id: movie.id, movie: { status: 1, user: { name: "Someone", email: "someone@mail.com" } } }
+      post :update, params: { id: @movie.id, movie: { status: 1, user: { name: "Someone", email: "someone@mail.com" } } }
       expect(response).to be_redirect
     end
   end
   
   describe "GET #search" do
     it "renders movie search" do
-      movie = Movie.create! valid_params
       result = Movie.where('LOWER(name) LIKE LOWER(?)', "%Test%")
       get :search, params: {}
-      expect(result).to eq([movie])
+      expect(result).to eq([@movie])
     end
   end
 end
