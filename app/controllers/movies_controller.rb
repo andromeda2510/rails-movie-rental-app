@@ -1,6 +1,7 @@
 require 'salesforce'
 
 class MoviesController < ApplicationController
+  include MoviesHelper
   def index
     @movies = Movie.order(:name).page(params[:page])
   end
