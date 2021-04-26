@@ -50,4 +50,12 @@ RSpec.describe MoviesController, type: :controller do
     end
   end
   
+  describe "GET #search" do
+    it "renders movie search" do
+      movie = Movie.create! valid_params
+      result = Movie.where('LOWER(name) LIKE LOWER(?)', "%Test%")
+      get :search, params: {}
+      expect(result).to eq([movie])
+    end
+  end
 end
