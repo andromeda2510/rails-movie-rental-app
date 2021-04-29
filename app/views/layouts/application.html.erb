@@ -35,6 +35,9 @@
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
+  <% if current_user %>
+  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+  <% end %>  
     <%= yield %>
   </body>
 </html>
