@@ -113,9 +113,9 @@ h3 {
 /* buttons */
 
 .button {
-  padding: 8px 16px;
+  padding: 6px 15px;
   border-radius: 8px;
-  border: none;
+  border: 2px solid var(--clr-accent);
   color: var(--clr-dark);
   text-align: center;
   text-decoration: none;
@@ -139,7 +139,6 @@ h3 {
   color: var(--clr-light);
   right: 80px;
   top: calc(50% - 40px / 2 - 372px);
-
   background-color: var(--clr-accent);
 }
 
@@ -157,6 +156,18 @@ h3 {
   color: var(--clr-light);
   border-radius: 7px;
   padding: 5px;
+}
+
+/* header */
+
+.header_links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username {
+  color: var(--clr-accent);
 }
 
 /* section title */
@@ -180,83 +191,6 @@ h3 {
 }
 .no-outline:focus {
   outline: none;
-}
-
-/* cards card */
-
-.cards-container {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  align-items: center;
-  gap: 30px;
-  margin: 36px auto;
-}
-
-.card {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  height: 13rem;
-  width: 35rem;
-  box-shadow: var(--bs);
-}
-
-.card-content {
-  width: 100%;
-  padding: 12px;
-}
-
-.card-content__header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.card-content__header-title {
-  gap: 10px;
-}
-
-.card-content__title {
-  color: var(--clr-dark);
-}
-
-.card-content__release-date {
-  color: var(--clr-gray);
-  font-size: var(--fs-body);
-}
-
-.card-content__tags {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 0.5rem;
-}
-
-.card-content__tag {
-  background-color: var(--clr-gray);
-  color: var(--clr-light);
-  font-size: 15px;
-  border-radius: 20px;
-  padding: 2px 6px;
-  margin-right: 5px;
-}
-
-.card-conent__tag--title {
-  color: var(--clr-dark);
-  margin-right: 5px;
-  font-size: var(--fs-body);
-}
-
-.card-footer {
-  display: flex;
-  justify-content: flex-end;
-  align-items: baseline;
-  gap: 10px;
-  padding: 0;
-}
-
-.card-footer p {
-  margin: 0.5rem 0.5rem;
 }
 
 /* forms */
@@ -289,4 +223,8 @@ h3 {
   border-radius: 8px;
   font-family: var(--roboto-font);
   padding: 8px 16px;
+}
+
+.card-footer {
+  padding: 0;
 }

@@ -22,9 +22,17 @@
       <%= form.text_field :query, placeholder: "search", class: "no-outline" %>
       <% end %>
   <%# </div> %>
-  <%= link_to new_movie_path do %>
-    <span class='button button-movie'>New Movie</span>
-  <% end %>
+    <div class="header_links">
+      <% if current_user %>
+        <span>Logged as, <span class="username"><%= current_user.name %></span> </span>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button" %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path, class: "button" %>
+      <% end %>
+      <%= link_to new_movie_path do %>
+        <span class='button button-movie'>New Movie</span>
+      <% end %>
+    </div>
   </div>
 
 
@@ -35,9 +43,7 @@
   <% if alert %>
     <p class="alert alert-danger"><%= alert %></p>
   <% end %>
-  <% if current_user %>
-  <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-  <% end %>  
+  
     <%= yield %>
   </body>
 </html>
