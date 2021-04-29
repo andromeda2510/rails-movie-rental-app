@@ -9,8 +9,7 @@ RSpec.describe MoviesController, type: :controller do
     @movie = Movie.create!({ name: 'Movie test', director: 'Test', release_date: '01/20/2015',
                              status: 0, category_id: @category.id })
   end
-  p @movie
-  p @category
+
   let(:valid_params) do
     { name: 'Test title', director: 'Test', release_date: '01/20/2015', category_id: @category.id,
       status: 1 }

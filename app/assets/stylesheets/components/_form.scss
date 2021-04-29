@@ -1,0 +1,37 @@
+/* session form */
+
+/* forms */
+
+.title__form {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.form-text {
+  font-family: var(--roboto-font);
+  font-size: 14px;
+}
+
+.form-body {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.form-p {
+  margin-bottom: 20px;
+}
+
+.form-field {
+  width: 15rem;
+  background: var(--clr-light);
+  border: 1px solid var(--clr-gray);
+  border-radius: 8px;
+  font-family: var(--roboto-font);
+  padding: 8px 16px;
+}
+
+.form_links {
+  text-align: center;
+  margin-top: 18px;
+}
