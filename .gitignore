@@ -13,6 +13,7 @@ echo "coverage" >> .gitignore
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.vscode
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*

@@ -3,9 +3,9 @@ class Movie < ApplicationRecord
     available: 0,
     rented: 1
   }
-  STATUS_OPTIONS = [0, 1]
+  STATUS_OPTIONS = [0, 1].freeze
 
-  validates :status, :inclusion => {:in => STATUS_OPTIONS}
+  validates :status, inclusion: { in: STATUS_OPTIONS }
   attribute :status, :integer, default: 0
 
   belongs_to :user, optional: true

@@ -8,9 +8,9 @@ gem 'rails', '~> 6.1.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
-gem 'puma', '~> 5.0'
-gem 'json', '=1.8.6'
 gem 'httparty', '~> 0.13.7'
+gem 'json', '=1.8.6'
+gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'sass-rails', '>= 6'
@@ -59,12 +59,12 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'simplecov', require: false
   gem 'simplecov-rcov'
-  gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
+  gem 'database_cleaner'
   gem 'webdrivers'
-  gem "database_cleaner"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
