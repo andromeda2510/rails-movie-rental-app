@@ -43,7 +43,7 @@ class MoviesController < ApplicationController
     if @movie.status == 1
       @movie.status = 0
     else
-      rent_movie(@movie, @user)
+      rent_movie(@movie)
     end
     @movie.save
     # salesforce.update_status(@movie, @user)

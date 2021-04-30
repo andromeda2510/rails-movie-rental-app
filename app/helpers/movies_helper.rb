@@ -1,5 +1,5 @@
 module MoviesHelper
-  def rent_movie(movie, user)
+  def rent_movie(movie)
     user = User.new(user_params)
     return unless user.save
 
