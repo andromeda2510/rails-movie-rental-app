@@ -4,6 +4,7 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+echo "coverage" >> .gitignore
 # Ignore bundler config.
 /.bundle
 
@@ -12,6 +13,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+.vscode
 
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*

@@ -1,6 +1,7 @@
 require 'salesforce'
 
 class MoviesController < ApplicationController
+  include MoviesHelper
   def index
     @movies = Movie.order(:name).page(params[:page])
   end
@@ -42,7 +43,7 @@ class MoviesController < ApplicationController
     if @movie.status == 1
       @movie.status = 0
     else
-      rent_movie
+      rent_movie(@movie)
     end
     @movie.save
     # salesforce.update_status(@movie, @user)
@@ -59,17 +60,5 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(:name, :director, :release_date, :category_id, :status)
-  end
-
-  def user_params
-    params.require(:user).permit(:name, :email)
-  end
-
-  def rent_movie
-    @user = User.new(user_params)
-    return unless @user.save
-
-    @movie.status = 1
-    @movie.user_id = @user.id
   end
 end
