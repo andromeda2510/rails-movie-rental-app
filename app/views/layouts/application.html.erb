@@ -29,8 +29,10 @@
       <% else %>
         <%= link_to "Sign in", new_user_session_path, class: "button" %>
       <% end %>
-      <%= link_to new_movie_path do %>
-        <span class='button button-movie'>New Movie</span>
+      <% if current_user.admin? %>
+        <%= link_to new_movie_path do %>
+          <span class='button button-movie'>New Movie</span>
+        <% end %>
       <% end %>
     </div>
   </div>

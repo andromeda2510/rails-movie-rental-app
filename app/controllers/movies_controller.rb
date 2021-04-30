@@ -24,7 +24,7 @@ class MoviesController < ApplicationController
   end
 
   def update
-    @movie = Movie.find(params[:id])
+    @movie = policy(current_user, Movie.find(params[:id]))
     if @movie.update(movie_params)
       redirect_to movies_path
     else
