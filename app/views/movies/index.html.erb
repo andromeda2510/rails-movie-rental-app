@@ -17,7 +17,7 @@
                 <%= link_to "Rented", toggle_available_status_movie_path(movie), method: :post, remote: :true, class:"button btn-rented" %>
               <% else %>
                 <button type="button" class="btn btn-available" data-toggle="modal" data-target="#modal-<%= movie.id %>" >
-                  Available
+                  Rent Movie
                 </button>
               <% end %>
             </div>
@@ -32,7 +32,7 @@
             <% if movie.rented? %>
               <span class="card-content__tag--title"><strong>Status:</strong> Rented by <%= movie.user.name %> </span>
             <% else %>
-              <span class="card-content__tag--title"><strong>Status:</strong> Not rented </span>
+              <span class="card-content__tag--title"><strong>Status:</strong> Available </span>
             <% end %>
           </div>
           <div class='card-footer'>
