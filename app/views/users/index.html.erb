@@ -1,0 +1,13 @@
+<section>
+  <% @users.each do |user|  %>
+  <div class="d-grid gap-3">
+    <div class="p-2 bg-light border m-3 w-25 d-flex justify-content-between">
+      <span> <%= user.name %> </span>
+      <div>
+        <span> <%= link_to "Edit", edit_user_path(user) %> </span> |
+        <span> <%= link_to "Delete", user_path(user), method: :delete, data: {confirm: "Are you sure you want to delete this user?"} %></span>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</section>

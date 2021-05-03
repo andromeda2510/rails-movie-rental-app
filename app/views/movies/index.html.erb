@@ -33,7 +33,7 @@
             </div>
             <span class="card-conent__tag--title"><strong>Director:</strong> <%= movie.director %> </span>
             <% if movie.rented? %>
-              <span class="card-content__tag--title"><strong>Status:</strong> Rented by <%= movie.user.name %> </span>
+              <span class="card-content__tag--title"><strong>Status:</strong> Rented by <%= movie.user.name %></span>
             <% else %>
               <span class="card-content__tag--title"><strong>Status:</strong> Available </span>
             <% end %>

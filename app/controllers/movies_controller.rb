@@ -23,8 +23,7 @@ class MoviesController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @movie.update(movie_params)
@@ -46,7 +45,7 @@ class MoviesController < ApplicationController
     else
       rent_movie(@movie)
     end
-    # binding.pry
+   
     @movie.save
     # salesforce.update_status(@movie, @user)
 
