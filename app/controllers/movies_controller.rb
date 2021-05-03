@@ -2,6 +2,10 @@ require 'salesforce'
 
 class MoviesController < ApplicationController
   include MoviesHelper
+
+  before_action :set_movie, only: %i[edit update destroy toggle_available_status]
+  before_action :authenticate_user!, only: :toggle_available_status
+
   def index
     @movies = Movie.order(:name).page(params[:page])
   end
@@ -19,12 +23,9 @@ class MoviesController < ApplicationController
     end
   end
 
-  def edit
-    @movie = Movie.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @movie = Movie.find(params[:id])
     if @movie.update(movie_params)
       redirect_to movies_path
     else
@@ -33,18 +34,18 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    @movie = Movie.find(params[:id])
     @movie.destroy
     redirect_to movies_path
   end
 
   def toggle_available_status
-    @movie = Movie.find(params[:id])
+    @movie.user = current_user
     if @movie.status == 1
       @movie.status = 0
     else
       rent_movie(@movie)
     end
+
     @movie.save
     # salesforce.update_status(@movie, @user)
 
@@ -60,5 +61,9 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(:name, :director, :release_date, :category_id, :status)
+  end
+
+  def set_movie
+    @movie = Movie.find(params[:id])
   end
 end

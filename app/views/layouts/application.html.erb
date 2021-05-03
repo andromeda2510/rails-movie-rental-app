@@ -12,29 +12,49 @@
 
   <body>
   <header>
-  <div class='section_title'>
-    <%= link_to movies_path do %>
-      <h1 class="title">Movie Rent Store</h1>
-    <% end %>
-  </div>
-  <%# <div class='search-bar'> %>
-      <%= form_with class: 'button search-bar', url: search_path, method: 'get', local: true do |form|  %>
-      <%= form.text_field :query, placeholder: "search", class: "no-outline" %>
-      <% end %>
-  <%# </div> %>
-    <div class="header_links">
-      <% if current_user %>
-        <span>Logged as, <span class="username"><%= current_user.name %></span> </span>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "button" %>
-      <% else %>
-        <%= link_to "Sign in", new_user_session_path, class: "button" %>
-      <% end %>
-      <%= link_to new_movie_path do %>
-        <span class='button button-movie'>New Movie</span>
-      <% end %>
-    </div>
-  </div>
-
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+      <div class="container-fluid ">
+        <div class="d-flex align-items-center">
+          <div class="navbar-brand"><%= link_to movies_path do %>
+                <h1 class="title">Movie Rent Store</h1>
+              <% end %>
+          </div>
+          <div class="nav-item">
+                <% if current_user %>
+                  <span>Welcome, <span class="username"><%= link_to current_user.name,  edit_user_registration_path(current_user) %></span> </span>
+                <% end %>
+          </div>
+        </div>
+        <div class="search-bar">
+          <%= form_with url: search_path, method: 'get', local: true do |form|  %>
+          <%= form.text_field :query, placeholder: "search", class: "no-outline" %>
+          <% end %>
+        </div>
+        <div class="" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <% if current_user && current_user.admin? %>
+              <li class="nav-item">
+                <%= link_to new_movie_path do %>
+                  <span class='nav-link'>New Movie</span>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Users", users_path, class: "nav-link" %>
+              </li>
+            <% end %>
+            <% if current_user %>
+              <li class="nav-item">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Sign in", new_user_session_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
   </header>
   <% if alert %>

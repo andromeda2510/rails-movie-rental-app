@@ -1,5 +1,5 @@
 <div class='form-body'>
-  <%= form_for :user, url: toggle_available_status_movie_path(id: movie.id), local: true do |form| %>
+  <%= form_for @user, local: true do |form| %>
 
     <div>
       <p class='form-p'>
@@ -9,10 +9,11 @@
       <p class='form-p'>
         <%= form.label :email, class: 'form-text' %>
         <%= form.text_field :email, class: 'form-field', placeholder: "user@mail.com" %>
-      </p>     
+      </p> 
       
       <div class = "form-button form-p">
-        <%= form.submit class: "button button-category"%>
+        <%= form.submit class: "button btn-form"%>
+        <%= link_to "Cancel", :back, class: 'button button-movie' %>
       </div>
     </div>
   <% end %>

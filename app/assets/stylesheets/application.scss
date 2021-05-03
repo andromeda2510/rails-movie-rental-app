@@ -59,8 +59,6 @@ body {
   font-family: var(--lato-font);
   font-size: var(--fs-body);
   line-height: 1.6;
-  margin-left: 80px;
-  margin-right: 80px;
 }
 
 header {
@@ -68,7 +66,6 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
 }
 
 footer {
@@ -115,7 +112,7 @@ h3 {
 .button {
   padding: 6px 15px;
   border-radius: 8px;
-  border: 2px solid var(--clr-accent);
+  border: none;
   color: var(--clr-dark);
   text-align: center;
   text-decoration: none;
@@ -133,6 +130,7 @@ h3 {
 
 .btn-form {
   margin-top: 10px;
+  border: 1px solid #adb5bd;
 }
 
 .button-movie {
@@ -170,6 +168,10 @@ h3 {
   color: var(--clr-accent);
 }
 
+.navbar {
+  width: 100%;
+}
+
 /* section title */
 
 .section_title {
@@ -181,9 +183,12 @@ h3 {
 /* searchbar */
 
 .search-bar {
-  border: 1px solid var(--clr-gray);
+  border: 1px solid #adb5bd;
   color: var(--clr-gray);
-  border-radius: 15px;
+  border-radius: 8px;
+  padding: 4px;
+  background-color: #ffffff;
+  width: 20%;
 }
 
 .search-bar input {
