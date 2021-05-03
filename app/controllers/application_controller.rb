@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def update_allowed_parameters
-    permissions = Proc.new do |user|
+    permissions = proc do |user|
       user.permit(:name,
                   :email,
                   :password,

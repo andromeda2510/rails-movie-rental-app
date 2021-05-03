@@ -45,7 +45,7 @@ class MoviesController < ApplicationController
     else
       rent_movie(@movie)
     end
-   
+
     @movie.save
     # salesforce.update_status(@movie, @user)
 
