@@ -21,7 +21,7 @@
           </div>
           <div class="nav-item">
                 <% if current_user %>
-                  <span>Welcome, <span class="username"><%= link_to current_user.name %></span> </span>
+                  <span>Welcome, <span class="username"><%= link_to current_user.name,  edit_user_registration_path(current_user) %></span> </span>
                 <% end %>
           </div>
         </div>
